@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo1.png">
+    <title>SehatSync | #No 1 appointment scheduling</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img class="logo" src="logo.jpg" alt=""></a>
+          
+          <!-- Move the search-bar and button together inside the same container -->
+          <div class="search-bar">
+            <input type="search" id="search-input" placeholder="Search for doctors or hospitals">
+            <button type="button" class="btn btn-success" onclick="filterResults()">Search</button>
+          </div>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="nav-link active" aria-current="page" onclick="open_home()" >Home</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" onclick="open_top()">Top In Delhi</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" onclick="open_inventory()">Inventory</button> 
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" onclick="open_about()">About Us</button> 
+              </li>
+              <li class="nav-item">
+               <button class="nav-link" onclick="open_QNA()">Q&A</button>
+              </li>
+            </ul>
+          </div>
+          <div class="log">
+          <button type="button" class="btn btn-outline-primary login_butt" onclick="open_login()" >Login</button>
+          <button type="button" class="btn btn-outline-primary profile" id="profile-btn" onclick="open_profile()"><i class="fa-solid fa-user"></i></button>
+          <button type="button" class="btn btn-outline-danger" onclick="emergency()">Emergency</button>
+          </div>
+          
+        </div>
+      </nav>
+      
+    </header>
+    
+    <main class="main">
+        <section class="user-data">
+            <div class="title-wrapper">
+              <h5 class="h5">Your Booking Progress</h5>
+              <data value="60">60%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width: 70%;"></div>
+            </div>
+        </section>
+        <section class="hero">
+            <h1>Find the Best Doctors and appointments Online</h1>
+            <p>Get instant appointments with top doctors across Delhi in any Hospitals.</p>
+            <div class="cards">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/id/1364075546/photo/empty-corridor-in-modern-hospital-with-information-counter-and-hospital-bed-in-rooms-3d.jpg?s=612x612&w=0&k=20&c=xxFDmIVpH1wJaaiorpvfzec4RRggSb48PDb_dU9bTjo=" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Hospitals</h5>
+                      <p class="card-text">Get information about Hospitals near you just in a click</p>
+                      <button class="btn btn-primary" onclick="open_top()">Find Hospitals</button>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://static.vecteezy.com/system/resources/previews/000/608/082/original/vector-set-of-doctor-cartoon-characters-medical-staff-team-concept.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Private Clinics</h5>
+                      <p class="card-text">Find doctors of your choice in a click and no waiting queues in chamber</p>
+                      <button class="btn btn-primary"onclick="open_doc()" >Find Doctors</button> 
+                    </div>
+                  </div>
+                  <div class="card" style="width: 18rem;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuvmeBOVKsc9TWMyr6IgoMCw1U6ydfisMHoA&s" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Schedule Appointments</h5>
+                      <p class="card-text">Schedule your appointments with best doctor of Delhi and let us save your time</p>
+                      <button class="btn btn-primary" onclick="open_schedule()" >Schedule now</button>
+                    </div>
+                  </div>            
+                </div>  
+        </section>
+        <section class="specailist">
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="general.jpeg" alt="eye">
+            </div>
+            <h6>General</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="child.jpg" alt="eye">
+            </div>
+            <h6>Child</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="cold.jpg" alt="eye">
+            </div>
+            <h6>Cold</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="WOMENS HEALTH.jpg" alt="eye">
+            </div>
+            <h6>Women Health</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="SKIN.jpg" alt="eye">
+            </div>
+            <h6>Skin</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="mental.jpg" alt="eye">
+            </div>
+            <h6>Mental Helath</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="BONES.jpg" alt="eye">
+            </div>
+            <h6>Bones</h6>
+          </div>
+          <div class="box">
+            <div class="card1">
+              <img class="special_img" src="ENT.jpg" alt="eye">
+            </div>
+            <h6>ENT</h6>
+          </div>
+        </section>
+        
+        <section class="features">
+            <div class="Why">
+                <h2>Why SehatSync?</h2><br>
+            </div>
+            
+            <ul>
+                <li>
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <p>Secure and trusted platform</p>
+                </li>
+                <li>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <p>Instant appointments with top doctors</p>
+                </li>
+                <li>
+                    <i class="fas fa-medkit" aria-hidden="true"></i>
+                    <p>Get quality healthcare at your doorstep</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <section class="it-emergency">
+      <h1 class="emergency-heading">Emergency Section</h1>
+      <button id="getLocation" class="btn primary-btn">Find Nearby Hospitals</button>
+      <div id="hospital-list" class="hospital-list" style="display: none;">
+          <h2>Nearby Hospitals</h2>
+          <form id="hospitalForm">
+              <ul id="hospitals" class="hospital-list-items"></ul>
+              <button type="submit" id="submitButton" class="btn secondary-btn" style="display: none;">Submit</button>
+              <button type="button" id="bookAmbulanceButton" class="btn danger-btn" style="display: none;">Book Ambulance</button>
+          </form>
+      </div>
+  </section>
+    <section class="user_profile">
+          <!-- User Profile Section -->
+          <div class="profile-container">
+          <!-- Profile Picture and Basic Info -->
+          <div class="profile-header">
+            <img src="logo1.png" alt="User Profile Picture" class="profile-picture">
+            <div class="user-info">
+              <h2 class="user-name">Avijit Nandi</h2>
+              <p class="user-id"><strong>ID:</strong> 123456789</p>
+              <p class="user-address"><strong>Address:</strong> 123 Main St, Delhi, India</p>
+            </div>
+          </div>
+
+          <!-- Bookings Section -->
+          <div class="profile-section">
+            <h3 class="section-title">Bookings</h3>
+            <ul class="bookings-list">
+              <li>Booking #001 - Date: 2024-09-01 - Doctor: Dr. Ramesh Gupta</li>
+              <li>Booking #002 - Date: 2024-09-15 - Doctor: Dr. Neha Verma</li>
+              <!-- Add more bookings as needed -->
+            </ul>
+          </div>
+
+          <!-- Payment History Section -->
+          <div class="profile-section">
+            <h3 class="section-title">Payment History</h3>
+            <ul class="payments-list">
+              <li>Payment #001 - Amount: 1150 - Date: 2024-09-01</li>
+              <li>Payment #002 - Amount: 720 - Date: 2024-09-15</li>
+              <!-- Add more payments as needed -->
+            </ul>
+          </div>
+        </div>
+    </section>
+    <section class="scheduling">
+      <div class="form-container">
+        <h1 class="form-title">Patient Registration Form</h1>
+        <h6>If you are 1st time consulting the doctor keep the date doctor name and prescription section empty</h6>
+        
+        <form action="submit_form.php" method="post" class="registration-form">
+          <!-- Patient Information Section -->
+          <div class="form-group">
+            <label for="patient-name">Full Name:</label>
+            <input type="text" id="patient-name" name="patient-name" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+    
+          <!-- Appointment Details Section -->
+          <div class="form-group">
+            <label for="doctor">Avalible Doctors:</label>
+            <select id="doctor" name="doctor" required>
+              <option value="dr_smith">Dr. John Smith - Cardiologist</option>
+              <option value="dr_jones">Dr. Emily Jones - Neurologist</option>
+              <option value="dr_williams">Dr. Michael Williams - General Physician</option>
+              <option value="dr_williams">No Idea</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="appointment-date">Preferred Appointment Date:</label>
+            <input type="date" id="appointment-date" name="appointment-date" required>
+          </div>
+          <div class="form-group">
+            <label for="prescription">Previous prescription:</label>
+            <input type="file" id="prescription" name="prescription">
+          </div>
+          <div class="form-group">
+            <label for="time-slot">Avalible Time Slot:</label>
+            <select id="time-slot" name="time-slot" required>
+              <option value="morning">Morning (9 AM - 12 PM)</option>
+              <option value="afternoon">Afternoon (1 PM - 4 PM)</option>
+              <option value="evening">Evening (5 PM - 8 PM)</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="message">Additional Notes:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Any specific concerns or symptoms?"></textarea>
+          </div>
+    
+          <!-- Submit Button -->
+          <button type="submit" class="submit-button">Submit</button>
+        </form>
+      </div>
+    </section>
+    <section class="doc">
+      <div class="doctors-container">
+        <h1 class="page-title">Best Doctors in Delhi</h1>
+    
+        <!-- Doctor Cards -->
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Ramesh Gupta</h2>
+          <p class="doctor-specialty">Cardiologist</p>
+          <p class="doctor-hospital">All India Institute of Medical Sciences (AIIMS)</p>
+          <p class="doctor-description">Dr. Ramesh Gupta is a renowned cardiologist with over 20 years of experience. He specializes in treating complex heart conditions and has a high success rate in cardiac surgeries.</p>
+          <a href="https://www.aiims.edu" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Ramesh Gupta')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Neha Verma</h2>
+          <p class="doctor-specialty">Neurologist</p>
+          <p class="doctor-hospital">Fortis Escorts Heart Institute</p>
+          <p class="doctor-description">Dr. Neha Verma is a leading neurologist known for her expertise in treating neurological disorders, including stroke, epilepsy, and Parkinson's disease. She is currently associated with Fortis Escorts Heart Institute.</p>
+          <a href="https://www.fortisescorts.in" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Neha Verma')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Aisha Khan</h2>
+          <p class="doctor-specialty">Orthopedic Surgeon</p>
+          <p class="doctor-hospital">Apollo Hospital</p>
+          <p class="doctor-description">With a specialization in joint replacement surgeries, Dr. Aisha Khan is one of Delhi's top orthopedic surgeons. She is known for her innovative approach to treating musculoskeletal issues.</p>
+          <a href="https://www.apollohospitals.com" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Aisha Khan')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Vikram Sharma</h2>
+          <p class="doctor-specialty">Oncologist</p>
+          <p class="doctor-hospital">Max Super Speciality Hospital</p>
+          <p class="doctor-description">Dr. Vikram Sharma is a highly regarded oncologist with extensive experience in treating various types of cancers. He is affiliated with Max Super Speciality Hospital, where he leads the oncology department.</p>
+          <a href="https://www.maxhealthcare.in" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Vikram Sharma')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Priya Singh</h2>
+          <p class="doctor-specialty">Pediatrician</p>
+          <p class="doctor-hospital">Sir Ganga Ram Hospital</p>
+          <p class="doctor-description">Dr. Priya Singh is a top pediatrician in Delhi, known for her expertise in pediatric care and child development. She currently practices at Sir Ganga Ram Hospital.</p>
+          <a href="https://www.sgrh.com" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Priya Singh')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Rahul Mehra</h2>
+          <p class="doctor-specialty">Gastroenterologist</p>
+          <p class="doctor-hospital">Indraprastha Apollo Hospital</p>
+          <p class="doctor-description">Specializing in digestive disorders, Dr. Rahul Mehra is a leading gastroenterologist at Indraprastha Apollo Hospital. He is known for his patient-centered approach and expertise in endoscopy.</p>
+          <a href="https://delhi.apollohospitals.com" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Rahul Mehra')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Sunita Mishra</h2>
+          <p class="doctor-specialty">Dermatologist</p>
+          <p class="doctor-hospital">BLK Super Speciality Hospital</p>
+          <p class="doctor-description">Dr. Sunita Mishra is a highly skilled dermatologist specializing in cosmetic dermatology and skin treatments. She is currently affiliated with BLK Super Speciality Hospital.</p>
+          <a href="https://www.blkhospital.com" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Sunita Mishra')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Amit Sood</h2>
+          <p class="doctor-specialty">ENT Specialist</p>
+          <p class="doctor-hospital">Artemis Hospital</p>
+          <p class="doctor-description">Dr. Amit Sood is a leading ENT specialist in Delhi, known for his expertise in treating ear, nose, and throat disorders. He is part of the Artemis Hospital team.</p>
+          <a href="https://www.artemishospitals.com" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Amit Sood')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Rekha Kapoor</h2>
+          <p class="doctor-specialty">Gynecologist</p>
+          <p class="doctor-hospital">Medanta - The Medicity</p>
+          <p class="doctor-description">Dr. Rekha Kapoor is a renowned gynecologist with extensive experience in women's health and maternity care. She practices at Medanta - The Medicity in Delhi.</p>
+          <a href="https://www.medanta.org" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Rekha Kapoor')">appointment</button>
+        </div>
+    
+        <div class="doctor-card">
+          <h2 class="doctor-name">Dr. Anil Kumar</h2>
+          <p class="doctor-specialty">Pulmonologist</p>
+          <p class="doctor-hospital">Manipal Hospitals</p>
+          <p class="doctor-description">Dr. Anil Kumar is a top pulmonologist known for his expertise in treating respiratory conditions. He is currently associated with Manipal Hospitals in Delhi.</p>
+          <a href="https://www.manipalhospitals.com" class="doctor-link">Visit Hospital Website</a>
+          <button class="hospital-link" onclick="open_schedule('Dr. Anil Kumar')">appointment</button>
+        </div>
+    
+      </div>
+    </section>
+    <section class="top">
+      <div class="hospital-card">
+        <h2 class="hospital-name">All India Institute of Medical Sciences (AIIMS)</h2>
+        <p class="hospital-description">AIIMS is known for its advanced medical care and research facilities. It offers a wide range of specialties and super specialties, including cardiology, neurology, and oncology.</p>
+        <div class="top_div">
+          <a href="https://www.aiims.edu" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+        </div>
+        
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Fortis Escorts Heart Institute</h2>
+        <p class="hospital-description">Fortis Escorts is a leading center for cardiac care in India, known for its state-of-the-art facilities and a team of highly skilled cardiologists.</p>
+        <div class="top_div">
+          <a href="https://www.fortisescorts.in" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+        </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Apollo Hospital</h2>
+        <p class="hospital-description">Apollo Hospital offers comprehensive healthcare services across multiple specialties. It is known for its cutting-edge technology and excellent patient care.</p>
+        <div class="top_div">
+          <a href="https://www.apollohospitals.com" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Max Super Speciality Hospital</h2>
+        <p class="hospital-description">Max Super Speciality Hospital is a premier healthcare provider in Delhi, offering services in oncology, cardiology, neurology, and other specialties.</p>
+        <div class="top_div">
+          <a href="https://www.maxhealthcare.in" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Sir Ganga Ram Hospital</h2>
+        <p class="hospital-description">Sir Ganga Ram Hospital is a multi-specialty hospital in Delhi, known for its world-class healthcare services and advanced treatment options.</p>
+        <div class="top_div">
+          <a href="https://www.sgrh.com" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Indraprastha Apollo Hospital</h2>
+        <p class="hospital-description">Indraprastha Apollo Hospital is a renowned hospital in Delhi, offering comprehensive healthcare services and known for its quality care and advanced technology.</p>
+        <div class="top_div">
+          <a href="https://delhi.apollohospitals.com" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">BLK Super Speciality Hospital</h2>
+        <p class="hospital-description">BLK Super Speciality Hospital offers specialized treatment in oncology, cardiology, and neurology, with a focus on providing quality healthcare services.</p>
+        <div class="top_div">
+          <a href="https://www.blkhospital.com" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Artemis Hospital</h2>
+        <p class="hospital-description">Artemis Hospital is a leading hospital in Delhi, known for its patient-centric approach and services in multiple specialties, including orthopedics and oncology.</p>
+        <div class="top_div">
+          <a href="https://www.artemishospitals.com" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Medanta - The Medicity</h2>
+        <p class="hospital-description">Medanta is one of the largest multi-specialty hospitals in Delhi, offering comprehensive services in neurology, cardiology, orthopedics, and more.</p>
+        <div class="top_div">
+          <a href="https://www.medanta.org" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="hospital-card">
+        <h2 class="hospital-name">Manipal Hospitals</h2>
+        <p class="hospital-description">Manipal Hospitals in Delhi is a well-known healthcare provider offering a range of medical services with a focus on patient care and advanced medical technology.</p>
+        <div class="top_div">
+          <a href="https://www.manipalhospitals.com" class="hospital-link">Visit Website</a>
+          <button class="hospital-link">appointment</button>
+          <button class="hospital-link">Call now</button>
+                </div>
+      </div>
+      
+      <div class="gcse-search"></div>
+    </section>
+    <section class="Inventory">
+      <div class="inventory_form">
+        <form  action="#">
+          <input class="inventory_bar" type="text" placeholder="hospital name"><button type="submit" class="btn btn-success" onclick="op_submit()">Submit</button>
+        </form>
+      </div>
+      <div class="inventory-data">
+        <h2>Hospital_Name</h2>
+        <ul class="skills-list content-card">
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">Adhesive Plaster 7.5 X 10 mtr</h5>
+              <data value="392">39%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width: 39%;"></div>
+            </div>
+          </li>
+        
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">Adhesive Plaster 5 X 05 mtr</h5>
+              <data value="1718">17%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width: 17%;"></div>
+            </div>
+          </li>
+        
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">Abdominal swab 30cm X 30cm</h5>
+              <data value="22740">22%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width: 22%;"></div>
+            </div>
+          </li>
+        
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">Abdominal gelatin sponge size 70 x 50 x 10mm</h5>
+              <data value="140">14%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width: 14%;"></div>
+            </div>
+          </li>
+        
+          <li class="skills-item">
+            <div class="title-wrapper">
+              <h5 class="h5">Abdominal gelatin anal size 30 x 80mm</h5>
+              <data value="20">20%</data>
+            </div>
+            <div class="skill-progress-bg">
+              <div class="skill-progress-fill" style="width: 20%;"></div>
+            </div>
+          </li>
+        
+          <!-- Continue with the rest of the items -->
+        </ul>
+        
+
+        <h6>updated <span>...</span> sec ago</h6>
+      </div>
+    </section>
+    <section class="About">
+      <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to SehatSync! We are a dedicated team of professionals committed to improving healthcare accessibility and efficiency through our platform. Meet the talented individuals behind SehatSync who make it all possible:</p>
+        <div class="team-member">
+          <img src="member4.jpg" alt="Member 4">
+          <div>
+              <h3>Sanjiv Mishra</h3>
+              <p><strong></strong></p>
+              <p></p>
+          </div>
+      </div>
+      
+      <div class="team-member">
+          <img src="profile.jpg" alt="Member 5">
+          <div>
+              <h3>Sahil Bera</h3>
+              <p><strong></strong></p>
+              <p></p>
+          </div>
+      </div>
+      
+      <div class="team-member">
+          <img src="member6.jpg" alt="Member 6">
+          <div>
+              <h3>Ayush Dutta</h3>
+              <p><strong></strong></p>
+              <p></p>
+          </div>
+      </div>
+
+        <div class="team-member">
+            <img src="us1.jpg" alt="Member 1">
+            <div>
+                <h3>Bhawna Jain</h3>
+                <p><strong></strong></p>
+                <p></p>
+            </div>
+        </div>
+        
+        <div class="team-member">
+            <img src="member2.jpg" alt="Member 2">
+            <div>
+                <h3>Barsha Singh</h3>
+                <p><strong></strong></p>
+                <p></p>
+            </div>
+        </div>
+        
+        <div class="team-member">
+            <img src="member3.jpg" alt="Member 3">
+            <div>
+                <h3>Rimmy Gupta</h3>
+                <p><strong></strong></p>
+                <p></p>
+            </div>
+        </div>
+        
+        
+    </section>
+    <section class="QNA">
+       <h1>Frequently Asked Questions (FAQs)</h1>
+        
+        <h2>1. How do I book an appointment with a doctor on SehatSync?</h2>
+        <p>To book an appointment with a doctor, visit the SehatSync homepage and use the search bar to find doctors by specialty or location. Select a doctor, choose a convenient time slot, and fill in your personal details. Confirm your appointment and you’ll receive a confirmation email or SMS with the appointment details.</p>
+        
+        <h2>2. Can I book an appointment with a hospital through SehatSync?</h2>
+        <p>Yes, SehatSync allows you to appointments with hospitals. You can search for hospitals by location and specialty. Once you find a hospital that meets your needs, select the required service, choose an available time slot, and complete the booking process.</p>
+        
+        <h2>3. How can I book an emergency bed in Delhi?</h2>
+        <p>To book an emergency bed, use the "Emergency Services" section on our website. Enter your location and the type of emergency care needed. SehatSync will display available hospitals with emergency beds. Choose the best option and follow the instructions to secure a bed.</p>
+        
+        <h2>4. What should I do if I need to reschedule or cancel my appointment?</h2>
+        <p>To reschedule or cancel your appointment, log in to your SehatSync account and go to the "My Appointments" section. Select the appointment you wish to modify and follow the prompts to reschedule or cancel. Please note that some cancellations may be subject to fees or policies set by the healthcare provider.</p>
+        
+        <h2>5. Are there any additional fees for using SehatSync?</h2>
+        <p>SehatSync does not charge additional fees for booking appointments. However, standard consultation fees or hospital charges apply as per the healthcare provider’s policies. Any charges will be communicated during the booking process.</p>
+        
+        <h2>6. How can I verify the credentials of a doctor or hospital on SehatSync?</h2>
+        <p>Each doctor and hospital listed on SehatSync has a detailed profile including their credentials, qualifications, and reviews from other patients. You can review this information before making a booking. For additional verification, you can also contact the healthcare provider directly.</p>
+        
+        <h2>7. Is my personal information safe with SehatSync?</h2>
+        <p>Yes, your personal information is secure with SehatSync. We use industry-standard encryption and security protocols to protect your data. For more details, please refer to our Privacy Policy.</p>
+        
+        <h2>8. Can I appointments for multiple patients?</h2>
+        <p>Yes, you can appointments for multiple patients. During the booking process, you’ll have the option to add additional patient details. Ensure that each patient’s information is accurate for proper scheduling.</p>
+        
+        <h2>9. How do I find doctors or hospitals with specific specialties?</h2>
+        <p>Use the search filters on SehatSync to find doctors or hospitals by specialty. Enter the specialty you need and your location to view a list of available options. You can also refine your search based on ratings, availability, and other criteria.</p>
+        
+        <h2>10. What should I do if I have trouble accessing the SehatSync website?</h2>
+        <p>If you encounter issues accessing the SehatSync website, try clearing your browser’s cache or using a different browser. If the problem persists, contact our support team via the "Contact Us" page for assistance.</p>
+        
+        <h2>11. How can I provide feedback about my experience with SehatSync?</h2>
+        <p>We welcome your feedback! You can provide feedback through our "Feedback" section on the website or by emailing us at <a href="mailto:feedback@sehatync.com">feedback@sehatync.com</a>. Your input helps us improve our services.</p>
+        
+        <h2>12. Are there any discounts or offers available on SehatSync?</h2>
+        <p>Occasionally, SehatSync offers promotions or discounts. Check our website’s "Offers" section or subscribe to our newsletter to stay updated on any current deals or special offers.</p>
+        
+    </section>
+    <section class="privacy">
+      <div class="container">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us. This Privacy Policy explains how SehatSync we collects, uses, and discloses information about you when you use our website SehatSync and other services (collectively, the "Services").</p>
+        
+        <h2>1. Information We Collect</h2>
+        <p>We collect information you provide directly to us when you use our Services. This may include:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, etc.</li>
+            <li><strong>Account Information:</strong> Username, password, and other information you provide to create an account.</li>
+            <li><strong>Payment Information:</strong> Payment details if you make purchases through our Services.</li>
+        </ul>
+        
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+            <li>Provide, maintain, and improve our Services.</li>
+            <li>Process transactions and send related information.</li>
+            <li>Respond to your inquiries and provide customer support.</li>
+            <li>Send you updates, marketing, or promotional materials, with your consent.</li>
+            <li>Analyze usage and trends to improve user experience.</li>
+        </ul>
+        
+        <h2>3. How We Share Your Information</h2>
+        <p>We may share your information with:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> Third-party vendors who assist us in operating our Services.</li>
+            <li><strong>Legal Requirements:</strong> When required to comply with legal obligations or protect our rights.</li>
+            <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets.</li>
+        </ul>
+        
+        <h2>4. Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your information against unauthorized access, disclosure, alteration, and destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+        
+        <h2>5. Your Choices</h2>
+        <p>You can:</p>
+        <ul>
+            <li>Access and update your personal information.</li>
+            <li>Opt-out of receiving marketing communications.</li>
+            <li>Delete your account or request deletion of your personal data.</li>
+        </ul>
+        
+        <h2>6. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on our website. Your continued use of the Services after any changes constitutes your acceptance of the revised Privacy Policy.</p>
+        
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at <a href="SehatSync@gmail.com">SehatSync</a>.</p>
+        
+    </section>
+    <section class="terms">
+      <div class="container">
+        <h1>Terms of Service</h1>
+        <p>Welcome to SehatSync. By accessing or using our website <a href="SehatSync@gmail.com">SehatSync</a>, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.</p>
+        
+        <h2>1. Introduction</h2>
+        <p>These terms govern your use of our website and services. If you do not agree to these terms, please do not use our website.</p>
+        
+        <h2>2. Use of the Site</h2>
+        <p>You agree to use our website only for lawful purposes and in a manner that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the site.</p>
+        
+        <h3>2.1 User Accounts</h3>
+        <p>If you create an account on our site, you are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+        
+        <h2>3. Intellectual Property</h2>
+        <p>All content and materials on our website are the property of [Your Company Name] or our licensors and are protected by intellectual property laws. You may not use or reproduce any content without our prior written permission.</p>
+        
+        <h2>4. Limitation of Liability</h2>
+        <p>We shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of our website.</p>
+        
+        <h2>5. Changes to Terms</h2>
+        <p>We may update these terms from time to time. We will notify you of any changes by posting the new terms on our website. Your continued use of the site after any changes constitutes your acceptance of the new terms.</p>
+        
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions about these Terms of Service, please contact us at <a href="SehatSync@gmail.com">SehatSync</a>.</p>
+        
+    </section>
+    <section class="contact">
+      <div class="contact-form-container">
+        <h1>Contact Us</h1>
+        <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send To SehatSync</button>
+        </form>
+    </div>
+    </section>
+    <section class="login_page">
+      <div class="log_body">
+        <div class="login-container">
+            <div class="head">
+                <h1>Welcome Back!</h1><button class="close"onclick="goBack()">x</button>
+            </div>
+            <p>We're glad to see you again.</p>
+            <input type="email" class="input-field" placeholder="Enter your email address">
+            <input type="password" class="input-field" placeholder="Enter your password">
+            <div class="logs">
+                <button class="login butt"> Sign in Patient</button>
+                <button class="login butt"> Sign in Register</button>
+            </div>
+            
+            <br><hr>
+            <button class="google-button butt">
+                <img src="google.webp" alt="Google Logo">
+                Sign in with Google
+            </button>
+            <div class="footer-links">
+                <a href="#">Forgot Password?</a> | <a href="#">Need Help?</a>
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 SehatSync . All rights reserved.</p>
+        <nav class="footer-nav">
+          <button onclick="open_privacy()">Privacy Policy</button>
+          <button onclick="open_terms()">Terms of Service</button>
+          <button onclick="open_contact()">Contact Us</button>
+        </nav>
+      </div>
+    </footer>
+    
+    <script src="app.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=27864292953be446d"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

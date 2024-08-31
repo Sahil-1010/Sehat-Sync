@@ -1,0 +1,1014 @@
+/* General styles */
+.logo{
+    height:4rem;
+    width: 4.5rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.log{
+    justify-items: space-between;
+    margin: 0.5rem;
+    display: flex;
+}
+.login_butt{
+    margin-right:0.2rem;
+}
+.it-emergency {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  display: none;
+  width: 80%;
+  margin: auto;
+}
+.user-data{
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+}
+.it-emergency {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.it-emergency-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Button Styles */
+.btn {
+  padding:auto;
+  border-radius: 5px;
+  /* border: none; */
+  font-size: small;
+  cursor: pointer;
+  font-size: 10px;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 91, 187, 0.2);
+}
+
+.secondary-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background-color: #1e7e34;
+  box-shadow: 0 4px 8px rgba(30, 126, 52, 0.2);
+}
+
+.danger-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.danger-btn:hover {
+  background-color: #c82333;
+  box-shadow: 0 4px 8px rgba(200, 35, 51, 0.2);
+}
+
+/* List Styles */
+.hospital-list {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.hospital-list-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hospital-list-items li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Radio Button Styles */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .emergency {
+      width: 90%;
+      padding: 15px;
+  }
+
+  .btn {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+
+  .emergency-heading {
+      font-size: 20px;
+  }
+}
+#hospital-list {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#hospital-list h2 {
+  margin-top: 0;
+}
+
+#hospitals {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#hospitals li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#hospitals li:last-child {
+  border-bottom: none;
+}
+.profile{
+    border-radius:20px;
+    display: none;
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    border: 1.5px solid black;
+    /* margin:1rem; */
+    margin:auto;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding-right: 0;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 3rem;
+    width: auto;
+    border:1px solid black;/* Adjust to fit contents */
+  }
+  
+  .search-bar input[type="search"] {
+    flex: 1;
+    padding:5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none; /* Remove outline on focus */
+  }
+  
+  .search-bar button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 100%;
+    margin-right:0; /* Match the height of the input field */
+  }
+  
+  .search-bar button:hover {
+    background-color: #539255;
+  }
+  
+  .search-bar i {
+    font-size: 18px;
+  }
+  
+header {
+    background-color: #d5d2d2;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin:1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-link:hover{
+    border:0.2px dashed rgb(178, 177, 177);
+    box-shadow: 5px 5px 5px rgb(144, 141, 141);
+    transition-delay: 1s;
+}
+.navbar-toggler{
+    margin-left:1rem;
+
+}
+/* Hero section styles */
+.hero {
+    background-color:rgb(249, 248, 248);
+    display:flex;
+    flex: wrap;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    color: #000000;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cards{
+    /* position: absolute; */
+    display:flex;
+    flex: wrap;
+    justify-content:center;
+    height: auto;
+    margin-bottom: 1rem;
+}
+.card{
+    margin:1rem;
+    box-shadow: 10px 10px 5px rgb(124, 122, 122);
+    max-width:30%;
+    max-height:10%;
+    font-size:10px;
+    transition: ease;
+}
+.card:hover{
+    transform: scale(1.02);
+    transition-delay:50ms;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+  }
+  
+  .card-body .btn {
+    margin-top: auto;
+    font-size: medium;
+  }
+  .specailist{
+    display: flex;
+    
+    justify-content:center;
+  }
+  .specailist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.specailist{
+    margin: 2rem;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 0.5px solid #ddd; /* Optional: add border for better visualization */
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: small;
+    justify-content: center;
+}
+.box:hover{
+    transform: scale(1.1);
+    transition: ease-in-out;
+    box-shadow: 3px 3px 5px rgb(159, 159, 159);
+}
+.card1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem; /* Adjust spacing between image and text */
+}
+
+.special_img {
+    border: 1px solid black;
+    border-radius: 50px;
+    overflow: hidden;
+    width: auto;
+    height: 4rem;
+    margin: 0;
+}
+
+h5 {
+    margin: 0;
+}
+
+/* .hero button {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #285f8f;
+} */
+
+/* Features section styles */
+.features {
+    padding: 2em 0;
+    background-color: #f5f5f5;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+.features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.features li {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.features i {
+    font-size: 2em;
+    color: #337ab7;
+    margin-bottom: 15px;
+}
+
+.features p {
+    font-size: 1em;
+}
+
+/* Responsive styles */
+@media (max-width:800px) {
+    .search-bar {
+        display: flex;
+        align-items: center;
+        padding-right: 0;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        height: 3rem;
+        width: auto;
+        border:1px solid black;/* Adjust to fit contents */ /* Reduce the height to make it more compact */
+      }
+    
+      .search-bar input[type="search"] {
+        padding: 3px; /* Reduce padding for a smaller input */
+        font-size: 0.9rem; /* Adjust font size for better fit */
+      }
+      .search-bar button {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        height: 100%;
+        margin-right:0; /* Ensure button height matches input height */
+      }
+      .nav-link{
+        display: block;
+        width: 100%;
+      }
+      .log{
+        margin-left:auto;
+      }
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+        margin: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+        padding: 1rem;
+        margin: 3rem;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .features li {
+        width: 100%;
+    }
+    .cards{
+        display:flex;
+        justify-items:center ;
+        margin-left:0;
+    }
+    .card{
+        min-width:30%;
+        min-height:10%;
+        font-size:10px;
+        justify-items:space-around;
+    }
+}
+@media (max-width: 470px) {
+    .cards {
+        display: block;
+        justify-items: center;
+    }
+    .card{
+        min-width:100%;
+        min-height:10%;
+        font-size:10px;
+        margin-bottom: 2rem;
+    }
+    .search-bar {
+        height: 3rem;
+        width: 80%; /* Use full width for better usability */
+        padding: 5px; /* Reduce padding for a more compact design */
+    }
+    .search-bar input[type="search"] {
+        padding: 5px; /* Reduce padding to fit better on small screens */
+        font-size: 0.9rem; /* Adjust font size for better readability */
+    }
+    .search-bar button {
+        height: 2.5rem;
+        width: 20%;
+        padding: 0; /* Remove padding to fit the button size */
+        font-size: 0.9rem; /* Adjust font size for better button content fit */
+    }
+}
+
+.footer {
+    background-color: #d6d3d3; /* Match the background color of the search bar */
+    border-top: 1px solid #ccc; /* Match the border style of the search bar */
+    padding: 20px 10px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer p {
+    margin: 0;
+    color: #333; /* Darker color for better readability */
+    font-size: 0.9rem; /* Slightly smaller font size for footer text */
+  }
+  
+  .footer-nav {
+    margin-top: 10px;
+
+  }
+  
+  .footer-nav button {
+    color: #0d8f11; /* Match button color */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    border: none;
+    background-color: #d6d3d3;
+  }
+  
+  .footer-nav button:hover {
+    text-decoration: underline;
+    color: #223323; /* Match hover color of button */
+  }
+  
+  /* Responsive footer for smaller screens */
+  @media (max-width: 470px) {
+    .footer {
+      padding: 15px 5px;
+    }
+  
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .footer-nav a {
+      margin: 5px 0;
+    }
+  }
+  .navbar-brand{
+    margin-right:5rem;
+}
+
+/* ........... */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1, h2 {
+    color: #007bff;
+    text-align: center;
+}
+h2 {
+    margin-top: 1.5rem;
+}
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+.team-member:last-child {
+    border-bottom: none;
+}
+.team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-right: 1rem;
+}
+.team-member h3 {
+    margin: 0 0 0.5rem;
+}
+.team-member p {
+    margin: 0;
+}
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+}
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+.contact-form-container {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin:auto;
+}
+.contact-form-container h1 {
+    margin-top: 0;
+    color: #333;
+}
+.contact-form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.contact-form-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+.contact-form-container button:hover {
+    background-color: #0056b3;
+}
+.About{
+    display: none;
+}
+.QNA{
+    display: none;
+}
+.terms{
+    display: none;
+}
+.privacy{
+    display: none;
+}
+.contact{
+    display: none;
+}
+/* .....log in css........ */
+.login_page{
+    display: none;
+}
+.log_body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #93966c, #7f8283);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+.login-container h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+}
+.login-container p {
+    margin: 0.5rem 0 1.5rem;
+    color: #666;
+}
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+.google-button {
+    background-color: #146127;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    width: 80%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin: auto;
+}
+.google-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.footer-links {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+.footer-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.login{
+    background-color: #20669c;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+.logs{
+    display:flex;
+}
+.butt:hover{
+    background-color: #007bff;
+    box-shadow: 3px 3px 5px black;
+}
+.head{
+    display: flex;
+    flex: wrap;
+    justify-items:center;
+    margin-left:25%;
+}
+.close{
+    margin-right:0;
+    border: 1px solid rgb(140, 138, 138);
+    border-radius:20px;
+    font-size:small;
+    margin-left:25%;
+    padding-top: 0;
+    padding-bottom:0;
+    padding-left:2px;
+    padding-right: 2px;
+    height:1.5rem;
+    width: 1.5rem;
+}
+.close:hover{
+    transform: scale(1.5);
+    color: rgb(93, 2, 2);
+}
+
+
+.skills-title { margin-bottom: 20px; }
+
+.skills-list { padding: 20px; }
+
+
+.skills-item:not(:last-child) { margin-bottom: 15px; }
+
+.skill .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.skill .title-wrapper data {
+  color: green;
+  font-size:2rem;
+  font-weight: 3rem;
+}
+
+.skill-progress-bg {
+  background: rgb(126, 126, 126);
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.skill-progress-fill {
+  background: rgb(36, 181, 23);
+  height: 100%;
+  border-radius: inherit;
+}
+.Inventory{
+    display: none;
+}
+.inventory_bar{
+    border:2px solid black;
+    border-radius: 5px;
+}
+.inventory_form{
+    display: flex;
+    justify-content:center;
+    justify-items: center;
+    margin: 2rem;
+}
+.inventory-data{
+    display: none;
+}
+
+/* CSS for the container */
+.top{
+    display: none;
+}
+.hospital-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  /* CSS for the page title */
+  .page-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* CSS for each hospital card */
+  .hospital-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 75%;
+    margin: auto;
+  }
+  
+  /* CSS for the hospital name */
+  .hospital-name {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  /* CSS for the hospital address */
+  .hospital-address {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  /* CSS for the hospital link */
+  .hospital-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height:3rem;
+    border:1px solid black;
+    font-size: small;
+  }
+  .top_div{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  .hospital-link:hover {
+    background-color: #0056b3;
+  }
+  
+  /* General styles for the form container */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form group styles */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Button styles */
+  .submit-button {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  .scheduling,.doc{
+    width: 80%;
+    margin: auto;
+    display: none;
+  }
+  .user_profile{
+    width: 80%;
+    margin: auto;
+    display:none;
+  }
+
+  .profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Profile header styling */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .user-info {
+    flex: 1;
+  }
+  
+  .user-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .user-id, .user-address {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Section title styling */
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+    color: #333;
+  }
+  
+  /* List styling */
+  .bookings-list, .payments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .bookings-list li, .payments-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .bookings-list li:last-child, .payments-list li:last-child {
+    border-bottom: none;
+  }
