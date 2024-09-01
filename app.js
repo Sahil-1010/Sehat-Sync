@@ -1,4 +1,5 @@
 // Selecting all relevant elements
+
 let home = document.querySelector('.main');
 let about = document.querySelector('.About');
 let qna = document.querySelector('.QNA');
@@ -15,13 +16,48 @@ let top_doc=document.querySelector('.top');
 let schedule=document.querySelector('.scheduling');
 let doc=document.querySelector('.doc');
 let user_profile=document.querySelector('.user_profile');
-let login=true;
+let login=false;
 let userid=0;
 let prof_btn=document.querySelector('#profile-btn');
 let ok_emergency=document.querySelector('.it-emergency');
+let register=document.querySelector('.register-data');
+let user_data=document.querySelector('.user-data');
+
+function logout(){
+    prof_btn.style.display='none';
+    open_login();
+    login=false;
+    // goBack();
+}
+function open_patient(){
+    login=true;
+    open_home();
+    register.style.display='none';
+    login_data();
+    user_data.style.display='block';
+}
+let form_container=document.querySelector('.form-container');
+let queue=0;
+function show_data(){
+    form_container.style.display='none';
+    queue=1;
+    open_home();
+}
+if (queue==1){
+    setTimeout(() => {
+        run_data();
+      }, "1000");
+    }
+function open_register(){
+    login=true;
+    open_home();
+    register.style.display='block';
+    user_data.style.display='none';
+    login_data();
+
+}
 
 function open_home(){
-    state=true;
     home.style.display = 'block';
     about.style.display = 'none';
     qna.style.display = 'none';
@@ -35,9 +71,9 @@ function open_home(){
     doc.style.display='none';
     user_profile.style.display='none';
     ok_emergency.style.display='none';
-
 }
-function emergency(){
+function it_emergency(){
+    login_opt.style.display='none';
     ok_emergency.style.display='block';
     home.style.display = 'none';
     about.style.display = 'none';
@@ -160,16 +196,15 @@ function open_login(){
     schedule.style.display='none';
     doc.style.display='none';
     user_profile.style.display='none';
-    ok_emergency.style.display='none';
-
-
-
-   
+    ok_emergency.style.display='none';   
 }
+let hero=document.querySelector('.hero');
+let specailist=document.querySelector('.specailist');
+let features=document.querySelector('.features');
+
 function open_inventory(){
     inventory.style.display='block';
     login_opt.style.display='none';
-    home.style.display = 'none';
     about.style.display = 'none';
     qna.style.display = 'none';
     terms.style.display = 'none';
@@ -180,12 +215,34 @@ function open_inventory(){
     doc.style.display='none';
     user_profile.style.display='none';
     ok_emergency.style.display='none';
-
-
+    home.style.display='none';
+    hero.style.display = 'block';
 
 }
-function op_submit(){
-    data.style.display='block';
+function open_inventory_register(){
+    inventory.style.display='block';
+    login_opt.style.display='none';
+    hero.style.display = 'none';
+    about.style.display = 'none';
+    qna.style.display = 'none';
+    terms.style.display = 'none';
+    privacy.style.display = 'none';
+    contact.style.display='none';
+    top_doc.style.display='none';
+    schedule.style.display='none';
+    doc.style.display='none';
+    user_profile.style.display='none';
+    ok_emergency.style.display='none';
+    register.style.display='block';
+    user_data.style.display='none';
+    features.style.display='none';
+    specailist.style.display='none';
+    alert('Searching Data Base...');
+}
+
+function op_submit(event) {
+    event.preventDefault(); // Prevent form submission
+    data.style.display = 'block';
 }
 // function change_data(userid){
 
@@ -193,6 +250,7 @@ function op_submit(){
 function goBack() {
     window.history.back();
     open_home();
+    // login_data();
 }
 // function emergency(){
 //     login=true;
@@ -204,6 +262,9 @@ function login_data() {
     if (login === false) {
         open_login();
         profile.style.display='none';
+        login_butt.style.display='block';
+
+        // open_home();
     }
     else{
         login_butt.style.display='none';
@@ -224,7 +285,6 @@ function open_top(){
     schedule.style.display='none';
     doc.style.display='none';
     user_profile.style.display='none';
-
     ok_emergency.style.display='none';
 
 }
@@ -294,10 +354,13 @@ function open_profile(){
 // }
 // Add event listeners to each button
 must_login.forEach(button => {
-    button.addEventListener('click', login_data);
+    // Check if the button does not have the 'super' class
+    if (!button.classList.contains('super')) {
+        button.addEventListener('click', login_data); // Add click event listener
+    }
 });
 
-login_data();
+// login_data();
 
 const delhiBounds = {
     minLat: 28.4041,
@@ -521,3 +584,154 @@ document.getElementById('bookAmbulanceButton').addEventListener('click', functio
 //         break;
 //     }
 //   }
+document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.patient');
+    const submitButton = document.getElementById('submit-btn');
+    const resetButton = document.getElementById('reset-btn');
+    const fileUpload = document.getElementById('file-upload');
+    const timeDisplay = document.getElementById('current-time');
+    const hospitalSelect = document.getElementById('hospital-select');
+    const doctorSelect = document.getElementById('doctor-select');
+    const updateHospitalDoctorButton = document.getElementById('update-hospital-doctor');
+    const lateButtons = document.querySelectorAll('.late-btn');
+    const userList = document.getElementById('user-list');
+
+    // Function to update time dynamically
+    function updateTime() {
+        const now = new Date();
+        const formattedTime = now.toLocaleTimeString();
+        timeDisplay.textContent = formattedTime;
+    }
+
+    // Update time every second
+    setInterval(updateTime, 1000);
+
+    // Handle "Late" button click event
+    lateButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const userItem = this.parentElement;
+            userList.appendChild(userItem);  // Move user item to the end of the list
+        });
+    });
+
+    // Handle update button click event
+    submitButton.addEventListener('click', () => {
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const userItem = checkbox.parentElement;
+                const label = userItem.querySelector('label');
+                const statusLabel = userItem.querySelector('.status-label');
+                
+                label.classList.add('strikethrough');  // Strike through text
+                // statusLabel.textContent = Math.random() > 0.5 ? 'Paid' : 'Not Paid';  // Randomly assign 'Paid' or 'Not Paid'
+                
+                // Disable the user item
+                userItem.classList.add('disabled');
+                checkbox.disabled = true;
+                userItem.querySelector('.late-btn').disabled = true;
+            }
+        });
+    });
+
+    // Handle reset button click event
+    resetButton.addEventListener('click', () => {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;  // Uncheck all checkboxes
+            checkbox.disabled = false;  // Enable all checkboxes
+
+            const userItem = checkbox.parentElement;
+            const label = userItem.querySelector('label');
+            const statusLabel = userItem.querySelector('.status-label');
+            const lateButton = userItem.querySelector('.late-btn');
+
+            label.classList.remove('strikethrough');  // Remove strike through
+            // statusLabel.textContent = '';  // Clear status labels
+            lateButton.disabled = false;  // Enable all late buttons
+            userItem.classList.remove('disabled');  // Remove disabled state
+        });
+    });
+
+    // Handle file input change event
+    fileUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            alert(`Selected file: ${file.name}`);
+        }
+    });
+
+    // Handle hospital and doctor update button click event
+    updateHospitalDoctorButton.addEventListener('click', () => {
+        const selectedHospital = hospitalSelect.value;
+        const selectedDoctor = doctorSelect.value;
+        alert(`Selected Hospital: ${selectedHospital}, Selected Doctor: ${selectedDoctor}`);
+    });
+});
+
+
+// Wait for the DOM to load
+function check_data(){
+    if (login==true &&  queue==1){
+    run_data();
+    queue=2;
+    }
+    else{
+        alert('Book an appointment first');
+        open_schedule();
+    }
+    // alert('run');
+}
+const progressBar = document.getElementById('progress-fill');
+const progressValue = document.getElementById('progress-value');
+const queuePositionElement = document.getElementById('queue-position');
+const nextMessage = document.getElementById('next-message');
+const userTokenElement = document.getElementById('user-token');
+const progressDone = document.querySelector('.h5');
+
+// Create an audio element
+const audio = new Audio('fairydust.mp3');
+
+// Animate progress bar from 70% to 100% over 3 seconds
+let progress = 70;
+function run_data(){
+    // Get references to HTML elements
+   
+    const progressInterval = setInterval(() => {
+      if (progress < 100) {
+        progress += 1;
+        progressBar.style.width = `${progress}%`;
+        progressValue.textContent = `${progress}%`;
+        if (progress === 100) {
+          progressDone.innerText = 'Done';
+        }
+      } else {
+        clearInterval(progressInterval);
+      }
+    }, 30); // Update every 30ms (3000ms/100 increments = 30ms per increment)
+  
+    // Generate a random token from 1 to 10 and display it
+    const randomToken = Math.floor(Math.random() * 10) + 1;
+    userTokenElement.textContent = randomToken;
+  
+    // Initialize queue position and update it every 5 seconds
+    let queuePosition = 0;
+    const queueInterval = setInterval(() => {
+      if (queuePosition <= 10) {
+        queuePositionElement.textContent = queuePosition;
+  
+        // Check if queue position matches random token
+        if (queuePosition === randomToken-1) {
+          nextMessage.classList.remove('hidden');
+          nextMessage.classList.add('visible');
+  
+          // Play audio
+          audio.play();
+        } else {
+          nextMessage.classList.remove('visible');
+          nextMessage.classList.add('hidden');
+        }
+        queuePosition++;
+      } else {
+        clearInterval(queueInterval);
+      }
+    }, 3000); // Update every 5 seconds
+}
