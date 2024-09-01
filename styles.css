@@ -635,6 +635,12 @@ footer a:hover {
 }
 .QNA{
     display: none;
+    width: 80%;
+    margin: auto;
+    box-shadow: 1px 1px 3px 0.5px rgb(213, 213, 213);
+    padding:1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
 }
 .terms{
     display: none;
@@ -1012,3 +1018,185 @@ footer a:hover {
   .bookings-list li:last-child, .payments-list li:last-child {
     border-bottom: none;
   }
+
+/* Basic styling for the section */
+.register-data {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* Styling for headings */
+.register-data h3, .register-data h5, .register-data h6 {
+  margin: 10px 0;
+}
+
+/* Dropdown styling */
+.register-data select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Styling for the list of users */
+.users {
+  margin-top: 20px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-item label {
+  flex: 1;
+  font-weight: normal;
+}
+
+.user-item .late-btn {
+  margin-left: 10px;
+}
+
+.user-item .status-label {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Button styling */
+.register-data .btn {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+
+.btn-outline-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.btn-outline-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.btn-outline-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Styling for file input */
+input[type="file"] {
+  margin: 10px 0;
+}
+
+.register-data{
+  width: 80%;
+  margin: auto;
+  display: none;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.user-item{
+  display: flex;
+  justify-items:flex-end;
+  justify-content: flex-end;
+  border:1px solid rgb(226, 226, 226);
+  padding:0.5rem;
+}
+
+.status-label{
+  margin: auto;
+  width:20%;
+}
+
+/* General styling */
+.user-data {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  display: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-wrapper {
+  margin-bottom: 20px;
+}
+
+.skill-progress-bg {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.queue-container {
+  margin-top: 20px;
+}
+
+#next-message {
+  margin-top: 20px;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+.user-data{
+  margin:auto;
+  margin-top: 1rem;
+  width: 80%;
+}
